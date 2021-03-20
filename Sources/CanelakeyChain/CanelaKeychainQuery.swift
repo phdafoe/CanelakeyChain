@@ -139,7 +139,7 @@ open class CanelaKeychainQuery {
         var query = self.query()
         #if os(iOS)
         if let query = query {
-            status = CNKeychainErrorCode(rawValue: SecItemDelete(query))!
+            status = CNKeychainErrorCode(rawValue: SecItemDelete(query as CFDictionary))!
         }
         #else
         // On Mac OS, SecItemDelete will not delete a key created in a different
