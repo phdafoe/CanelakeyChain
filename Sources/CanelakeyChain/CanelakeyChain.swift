@@ -42,14 +42,10 @@ let kCNKeychainWhereKey = "svce"
 
 open class CanelakeyChain {
     
-    
-    
-    #if __IPHONE_4_0 && os(iOS)
-    private let CNKeychainAccessibilityType: CFTypeRef? = nil
-    #endif
+    private var CNKeychainAccessibilityType: CFTypeRef? = nil
     
     open func password(forService serviceName: String?, account: String?) -> String? {
-        return try? self.password(forService: serviceName, account: account)
+        return self.password(forService: serviceName, account: account)
     }
     
     open func password(forService serviceName: String?, account: String?, error: NSError) -> String? {
@@ -127,19 +123,15 @@ open class CanelakeyChain {
         return query.fetchAllData(error)
     }
     
-    #if __IPHONE_4_0 && os(iOS)
     open func accessibilityType() -> CFTypeRef? {
         return CNKeychainAccessibilityType
     }
     
     open func setAccessibilityType(_ accessibilityType: CFTypeRef?) {
-        CFRetain(accessibilityType)
-        if CNKeychainAccessibilityType != nil {
-        }
+    
         if let accessibilityType = accessibilityType {
             CNKeychainAccessibilityType = accessibilityType
         }
     }
-    #endif
     
 }
