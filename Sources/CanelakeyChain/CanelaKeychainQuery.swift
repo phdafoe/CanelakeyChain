@@ -362,7 +362,11 @@ open class CanelaKeychainQuery {
             message = NSLocalizedString("errSecDefault", "CNKeychain", resourcesBundle, nil);
         #else
         default:
-            message = SecCopyErrorMessageString(code, nil) as String?
+            if #available(iOS 11.3, *) {
+                message = SecCopyErrorMessageString(code, nil) as String?
+            } else {
+                // Fallback on earlier versions
+            }
         #endif
         }
         
