@@ -44,8 +44,8 @@ open class CanelakeyChain {
     
     private var CNKeychainAccessibilityType: CFTypeRef? = nil
     
-    open func password(forService serviceName: String?, account: String?) -> String? {
-        return self.password(forService: serviceName, account: account)
+    open func password(forService serviceName: String?, account: String?) throws -> String? {
+        return try? self.password(forService: serviceName, account: account)
     }
     
     open func password(forService serviceName: String?, account: String?, error: NSError) -> String? {
