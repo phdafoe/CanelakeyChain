@@ -1,6 +1,6 @@
 # CanelaKeychain para iOS - Funciones que nos permitirá trabajar mas fácil
 
-Esta es una colección de funciones auxiliares para guardar texto y datos en el KeyChain. Como probablemente hayas notado, la API de KeyChaon de Apple es muy poco detallada. 
+Esta es una colección de funciones auxiliares para guardar texto y datos en el KeyChain. Como probablemente hayas notado, la API de KeyChain de Apple es muy poco detallada. 
 
 Esta librería fue diseñada para proporcionar una sintaxis más corta para realizar una tarea simple: leer / escribir valores de texto para claves específicas:
 
